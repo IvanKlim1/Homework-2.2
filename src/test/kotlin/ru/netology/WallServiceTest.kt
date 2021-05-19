@@ -171,7 +171,7 @@ class WallServiceTest {
     @Test
     fun addPost() {
         val service = WallService()
-        service.add(Post(
+        val added = service.add(Post(
             0,
             1,
             1,
@@ -197,7 +197,32 @@ class WallServiceTest {
             "asd",
             1
         ))
-        assertTrue(true)
-
+        val expected = Post(
+            1,
+            1,
+            1,
+            1,
+            1,
+            "as",
+            1,
+            1,
+            2,
+            "asd",
+            "ads",
+            1,
+            1,
+            1,
+            "asd",
+            1,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            "asd",
+            1
+        )
+        assertEquals(expected, added)
     }
 }
