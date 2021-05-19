@@ -138,7 +138,7 @@ class WallServiceTest {
             true,
             "asd",
             1))
-        val update = Post(1,
+        val update = Post(11,
             0,
             0,
             0,
