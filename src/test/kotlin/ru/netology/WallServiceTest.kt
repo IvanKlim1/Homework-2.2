@@ -32,7 +32,11 @@ class WallServiceTest {
             true,
             true,
             "asd",
-            1))
+            1,
+        "VK",
+        1,
+            "yes"
+        ))
         service.add(Post(1,
             11,
             2,
@@ -56,7 +60,10 @@ class WallServiceTest {
             true,
             true,
             "asssd",
-            2))
+            2,
+            "VK",
+            1,
+            "yes"))
         service.add(Post(1,
             121,
             1,
@@ -80,7 +87,10 @@ class WallServiceTest {
             true,
             true,
             "asd",
-            1))
+            1,
+            "VK",
+            1,
+            "yes"))
         val update = Post(1,
             0,
             0,
@@ -104,7 +114,10 @@ class WallServiceTest {
             true,
             true,
             "asaad",
-            14)
+            14,
+            "VK",
+            1,
+            "yes")
 
         val result = service.update(update)
 
@@ -137,7 +150,12 @@ class WallServiceTest {
             true,
             true,
             "asd",
-            1))
+            1,
+            "VK",
+            1,
+            "yes"
+
+        ))
         val update = Post(11,
             0,
             0,
@@ -161,7 +179,10 @@ class WallServiceTest {
             true,
             true,
             "asaad",
-            14)
+            14,
+            "VK",
+            1,
+            "yes")
 
         val result = service.update(update)
 
@@ -195,7 +216,10 @@ class WallServiceTest {
             true,
             true,
             "asd",
-            1
+            1,
+            "VK",
+            1,
+            "yes"
         ))
         val expected = Post(
             1,
@@ -221,7 +245,10 @@ class WallServiceTest {
             true,
             true,
             "asd",
-            1
+            1,
+            "VK",
+            1,
+            "yes"
         )
         assertEquals(expected, added)
     }
