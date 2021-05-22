@@ -1,6 +1,7 @@
 package ru.netology
 
 interface Attachment {
-    val type:String
+    val type: String
 }
+
 

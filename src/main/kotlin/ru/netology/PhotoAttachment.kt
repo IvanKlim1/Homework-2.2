@@ -1,7 +1,8 @@
 package ru.netology
 
- class PhotoAttachment(
-    override val type: String = "photo",
+ data class PhotoAttachment(
     val photo: Photo
-) : Attachment
+) : Attachment {
+     override val type: String = "photo"
+}
 
