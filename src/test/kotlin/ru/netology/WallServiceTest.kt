@@ -1,8 +1,11 @@
 package ru.netology
 
+import org.junit.Assert
 import org.junit.Test
 
 import org.junit.Assert.*
+import java.lang.RuntimeException
+import java.lang.invoke.MethodHandles.throwException
 
 class WallServiceTest {
 
@@ -251,5 +254,33 @@ class WallServiceTest {
             "yes"
         )
         assertEquals(expected, added)
+    }
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+        val service=WallService()
+        val added = service.add(Post(
+                   0, 1, 1, 1, 1, "as", 1, 1,
+                 2, "asd", "ads", 1, 1, 1, "asd",
+                  1, true, true, true, true, true,
+                  true, "asd", 1, "VK", 1, "yes"
+               ))
+        val comment=service.createComment(Comment(
+                  3,1,1,1,"asd",1,1,1,
+                  1,1,1
+               ))
+    }
+    @Test
+    fun createComment() {
+        val result=WallService()
+         val added = result.add(Post(
+               0, 1, 1, 1, 1, "as", 1, 1,
+              2, "asd", "ads", 1, 1, 1, "asd",
+             1, true, true, true, true, true,
+             true, "asd", 1, "VK", 1, "yes"
+          ))
+        val comment=result.createComment(Comment(
+            1,1,1,1,"asd",1,1,1,
+            1,1,1
+        ))
     }
 }

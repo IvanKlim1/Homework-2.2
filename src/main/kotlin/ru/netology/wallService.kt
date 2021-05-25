@@ -2,6 +2,8 @@ package ru.netology
 
 class WallService {
     var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
+
     fun add(post: Post): Post {
         var post = post.copy(id = if (posts.isEmpty()) 1 else posts.last().id + 1)
         posts += post
@@ -16,5 +18,12 @@ class WallService {
             }
         }
         return false
+    }
+
+    fun createComment(comment: Comment) {
+        if (posts.none { it.id == comment.postId }) {
+            throw PostNotFoundException("no post with id")
+        }
+        comments + comment.copy(id = comments.lastOrNull()?.id ?: 0)
     }
 }
